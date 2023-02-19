@@ -5,7 +5,7 @@ import { Header } from '../paths'
 
 const SharedLayout = () => {
   return (
-    <div>
+    <div className='w-full h-screen'>
       <Header />
       <Outlet />
     </div>

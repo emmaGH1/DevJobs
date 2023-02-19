@@ -4,3 +4,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Large screens */
+@media (min-width: 767px) {
+    .bg-desktop {
+      background-image: url('./assets/desktop/bg-pattern-header.svg');
+    }
+  }
+
+  /* Medium screens */
+@media (min-width: 641px) and (max-width: 766px) {
+    .bg-tablet {
+      background-image: url('./assets/tablet/bg-pattern-header.svg');
+    }
+  }
+
+  /* Small screens */
+  @media (max-width: 640px) {
+    .bg-mobile {
+      background-image: url('./assets/mobile/bg-pattern-header.svg');
+    }
+  }
+
+  label {
+    display: none;
+  }
+  
+  input {
+    outline: none;
+  }
