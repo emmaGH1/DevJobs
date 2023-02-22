@@ -5,7 +5,7 @@ import { SearchFunctionality, ToggleComponent } from '../paths'
 const Header = () => {
 
   return (
-    <div className='relative bg-mobile bg-tablet bg-desktop flex w-full text-white'>
+    <div className='relative bg-mobile bg-tablet bg-desktop flex w-full bg-cover text-white'>
 
       <div className='flex flex-col w-[90%] mx-auto mt-5 xl:w-4/5 md:mt-8'>
         <div className='flex justify-between py-5 mb-[3.2rem]'>

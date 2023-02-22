@@ -18,7 +18,7 @@ const Job = ({ company, logo, logoBackground, position, postedAt, contract, loca
         {position}
       </div>
       <div className='mb-7'>{company}</div>
-      <div className={` ${isDarkMode ? 'text-light-violet' : 'text-violet'} mb-2 text-sm font-bold`}>{location}</div>
+      <div className={` ${isDarkMode ? 'text-light-violet' : 'text-violet'} mb-7 text-sm font-bold`}>{location}</div>
     </div>
   )
 }

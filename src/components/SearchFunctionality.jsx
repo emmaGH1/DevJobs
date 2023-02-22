@@ -16,7 +16,7 @@ const SearchFunctionality = () => {
   }
 
   return (
-     <form className={` ${isDarkMode ? 'bg-dark-blue shadow-none text-light-grey' : 'shadow-slate-100  bg-white text-dark-grey shadow'} w-full   rounded-md `} onSubmit={handleSubmit} >
+     <form className={` ${isDarkMode ? 'bg-dark-blue shadow-none text-light-grey' : 'shadow-slate-100  bg-white text-dark-grey shadow'} w-full rounded-md text-lg`} onSubmit={handleSubmit} >
 
         <div className='hidden md:flex items-center justify-between'>
           <div className={` ${isDarkMode ? 'border-white/10' : 'border-slate-300'} flex items-center border-r-[1px] w-1/3 xl:w-2/5 truncate p-5`}>

@@ -17,7 +17,7 @@ const Home = () => {
   }
 
   return (
-    <div className={` ${isDarkMode ? `bg-midnight text-light-grey {toggleShow && 'opacity-50'}` : `bg-slate-100 text-dark-grey ${toggleShow && 'opacity-50'}` }  mt-28`}>
+    <div className={` ${isDarkMode ? `bg-midnight text-light-grey ${toggleShow && 'opacity-10'}` : `bg-slate-100 text-dark-grey ${toggleShow && 'opacity-50'}` }  mt-28`}>
       <div className='sm:flex'>
         {
           filteredData.length > 0 ?  <div className='sm:flex sm:flex-wrap sm:mx-auto sm:justify-center sm:w-4/5'>
