@@ -23,7 +23,7 @@ const Home = () => {
           filteredData.length > 0 ?  <div className='sm:flex sm:flex-wrap sm:mx-auto sm:justify-center sm:w-4/5'>
           {filteredData.slice(0, handleShowJobs()).map((job) => {
           return (
-            <div key={job.id} className='sm:w-1/2 md:w-1/3'>
+            <div key={job.id} className='xs:w-1/2 md:w-1/3'>
               <Link to={`job/${job.id}`}>
                 <Job {...job} />
               </Link>
@@ -39,7 +39,7 @@ const Home = () => {
 
       </div>
       <div className={`justify-center mb-5 ${handleShowJobs() > 9 ? 'hidden' : 'flex'}`} onClick={() => setshowJobs(prev => prev + 3)}>
-        <div className='bg-violet text-white font-bold w-32 text-center py-3 rounded-md mb-20 cursor-pointer'>Load More</div>
+        <div className='bg-violet text-white font-bold w-32 text-center py-3 rounded mb-20 cursor-pointer'>Load More</div>
       </div>
   
     </div>

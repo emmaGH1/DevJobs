@@ -1,11 +1,14 @@
 import { useState, useContext } from 'react'
 import {RiFilter2Fill, HiSearch, MdLocationPin, AiOutlineCheck} from 'react-icons/all'
+import { useLocation } from 'react-router-dom'
 
 import { stateContext } from '../context/contextProvider'
 
-const SearchFunctionality = () => {
-  const { filterByTitle, filterByLocation, titleFilter, locationFilter, fullTimeChecked, setFullTimeChecked, handleSubmit, isDarkMode, toggleShow, setToggleShow } = useContext(stateContext)
 
+const SearchFunctionality = () => {
+  const [hideFeature, setHideFeature] = useState(false)
+  const { filterByTitle, filterByLocation, titleFilter, locationFilter, fullTimeChecked, setFullTimeChecked, handleSubmit, isDarkMode, toggleShow, setToggleShow } = useContext(stateContext)
+  const { pathname } = useLocation()
   const handleFullTimeCheck = () => {
     setFullTimeChecked(prev => !prev)
   }
@@ -14,9 +17,9 @@ const SearchFunctionality = () => {
     handleSubmit(e)
     setToggleShow(prev => !prev)
   }
-
+  
   return (
-     <form className={` ${isDarkMode ? 'bg-dark-blue shadow-none text-light-grey' : 'shadow-slate-100  bg-white text-dark-grey shadow'} w-full rounded-md text-lg`} onSubmit={handleSubmit} >
+     <form className={` ${pathname === '/' ? 'block' : 'hidden'} ${isDarkMode ? 'bg-dark-blue shadow-none text-light-grey' : 'shadow-slate-100  bg-white text-dark-grey shadow'} w-full rounded-md text-lg`} onSubmit={handleSubmit} >
 
         <div className='hidden md:flex items-center justify-between'>
           <div className={` ${isDarkMode ? 'border-white/10' : 'border-slate-300'} flex items-center border-r-[1px] w-1/3 xl:w-2/5 truncate p-5`}>

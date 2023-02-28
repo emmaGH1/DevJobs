@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'sm': '780px',
+        'xs': '640px'
+      },
       fontFamily: {
         'kumbh-shans': [' "Kumbh Sans" ', 'sans-serif'],
       },
