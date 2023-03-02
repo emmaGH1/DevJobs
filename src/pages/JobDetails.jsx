@@ -1,7 +1,8 @@
 import { useContext } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
-import { stateContext, jobsData } from '../paths'
+import { stateContext, jobsData, jobDetailsVariant } from '../paths'
 
 const JobDetails = () => {
   const { isDarkMode } = useContext(stateContext)
@@ -14,10 +15,10 @@ const JobDetails = () => {
   const { company, logo, logoBackground, website, contract, position, postedAt, location, apply, description, requirements, role } = job
 console.log(logoBackground)
   return (
-    <div className={`flex flex-col relative ${isDarkMode ? 'text-dark-grey  bg-midnight' : 'bg-slate-100 text-grey'} `}>
+    <div className={`flex flex-col relative ${isDarkMode ? 'text-dark-grey  bg-midnight' : 'bg-slate-100 text-grey'} `} >
         <div className={` w-[90%] sm:w-[70%] mx-auto`}>
 
-          <div className={`${isDarkMode ? 'bg-dark-blue text-white' : 'bg-white text-dark-blue'} -mt-5 sm:-mt-10 rounded-lg flex flex-col sm:flex-row items-center text-white justify-between`}>
+          <motion.div className={`${isDarkMode ? 'bg-dark-blue text-white' : 'bg-white text-dark-blue'} -mt-5 sm:-mt-10 rounded-lg flex flex-col sm:flex-row items-center text-white justify-between`} initial="hidden" whileInView="show" variants={jobDetailsVariant('left')}>
                <div className='flex flex-col sm:flex-row items-center'>
                   <div style={{ backgroundColor: `${logoBackground}`}} className='sm:h-32 sm:px-5 sm:rounded-l-lg sm:rounded-r-none flex items-center justify-center py-8 px-3 rounded-xl mb-5 -mt-10 sm:mt-0 sm:mb-0'>
                     <img src={`.${logo}`} alt={company} className='w-14 sm:w-20' />
@@ -32,10 +33,9 @@ console.log(logoBackground)
                 <div className='flex mt-5 sm:mt-0 sm:mr-5'>
                   <button className={`${isDarkMode ? 'bg-white/10 hover:bg-white/25' : 'bg-light-violet/20 text-violet hover:bg-light-violet/50'} p-3 rounded-md font-semibold mb-10 sm:mb-0`}><a href={apply}>Company Site</a></button>
                 </div>
-              
-          </div>
+          </motion.div>
 
-          <div className={`${isDarkMode ? 'bg-dark-blue' : 'bg-white'} mt-10`}>
+          <motion.div className={`${isDarkMode ? 'bg-dark-blue' : 'bg-white'} mt-10`} initial="hidden" whileInView="show" variants={jobDetailsVariant('right')}>
             <div className='flex flex-col mx-auto w-[90%]'>
 
                 <div className='flex flex-col sm:flex-row sm:justify-between items-center mb-7'>
@@ -85,10 +85,10 @@ console.log(logoBackground)
                 </div>
 
               </div>
-          </div>
+          </motion.div>
         </div>
 
-        <footer className={`${isDarkMode ? 'bg-dark-blue' : 'text-dark-blue bg-white'} mt-20 w-full p-7`}>
+        <motion.footer className={`${isDarkMode ? 'bg-dark-blue' : 'text-dark-blue bg-white'} mt-20 w-full p-7`} initial="hidden" whileInView="show" variants={jobDetailsVariant('bottom')}>
             <div className='flex  sm:w-[70%] mx-auto sm:justify-between'>
               <div className='hidden sm:block'>
                 <div className={`${isDarkMode ? 'text-white' : 'text-dark-blue'} font-bold text-xl`}>{position}</div>
@@ -98,7 +98,7 @@ console.log(logoBackground)
                 Apply Now
               </button>
             </div>
-        </footer>
+        </motion.footer>
     </div>
   )
 }

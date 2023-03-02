@@ -1,5 +1,4 @@
-import { useState, useEffect, createContext, useReducer } from 'react'
-import { useMedia } from 'use-media'
+import { useState, useEffect, createContext, useReducer, useRef } from 'react'
 
 import jobsData from '../assets/data.json'
 import { reducer } from './AppReducer'
@@ -21,6 +20,7 @@ export const GlobalContext = ({ children }) => {
   const [filteredData, setFilteredData] = useState(jobsData)
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [toggleShow, setToggleShow] = useState(false)
+  const myRef = useRef(null)
 
   useEffect(() => {
     const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -52,7 +52,7 @@ export const GlobalContext = ({ children }) => {
   }
 
   return (
-    <stateContext.Provider value={{ filterByTitle, filterByLocation, filteredData, fullTimeChecked, isDarkMode, toggleShow, setToggleShow, setIsDarkMode, setFullTimeChecked, titleFilter, locationFilter, handleSubmit, toggleDarkMode }}>
+    <stateContext.Provider value={{ filterByTitle, filterByLocation, filteredData, fullTimeChecked, isDarkMode, toggleShow, myRef,setToggleShow, setIsDarkMode, setFullTimeChecked, titleFilter, locationFilter, handleSubmit, toggleDarkMode }}>
           {children}
     </stateContext.Provider>
   )

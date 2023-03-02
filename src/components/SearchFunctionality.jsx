@@ -55,7 +55,7 @@ const SearchFunctionality = () => {
               </div>
               <p className={` ${isDarkMode ? 'text-white' : 'text-black'} font-bold ml-3` }>Full Time <span className='sm:hidden lg:inline-block'>Only</span> </p>
             </div>
-            <button type='submit' className='bg-violet p-2 px-5 rounded-md font-bold mr-5 text-white' >
+            <button type='submit' className='bg-violet p-2 px-5 rounded-md font-bold mr-5 text-white hover:bg-violet/75' >
                 Search
             </button>
           </div>
