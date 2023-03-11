@@ -66,7 +66,7 @@ const SearchFunctionality = () => {
 
           <div className='flex justify-between p-2'>
             <label htmlFor='filterSearch' />
-            <input type="search" name="filterSearch" placeholder='Filter by title...' className={`ml-2 outline-none text-xl will-change-transform ${isDarkMode && 'bg-dark-blue'}` }value={filterByTitle} onChange={titleFilter} />
+            <input type="search" name="filterSearch" placeholder='Filter by title...' className={`ml-2 outline-none text-xl will-change-transform ${isDarkMode && 'bg-dark-blue'}` } value={filterByTitle} onChange={titleFilter} />
             <div className='flex items-center'>
               <RiFilter2Fill className='text-dark-grey text-2xl' onClick={() => setToggleShow(prev => !prev)}/>
               <div className='flex bg-violet px-3 py-4 rounded-md ml-3'>

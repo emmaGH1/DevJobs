@@ -1,10 +1,12 @@
 import { useEffect } from "react"
+import { useLocation } from "react-router-dom"
 
 export const ScrollToTopOnLoad = ({children}) => {
-  
+  const location = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])
+  }, [location])
 
   return <div>
     {children}
@@ -12,7 +14,10 @@ export const ScrollToTopOnLoad = ({children}) => {
 }
 
 export const scrollToBottom = (myRef) => {
-  myRef.current.scrollTop = myRef.current.scrollHeight;
+  useEffect(() => {
+    myRef.current.scrollTop = myRef.current.scrollHeight;
+  }, 
+  [location])
 
 }
 
