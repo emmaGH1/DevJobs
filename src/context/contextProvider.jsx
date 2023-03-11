@@ -35,10 +35,12 @@ export const GlobalContext = ({ children }) => {
   
   const handleSubmit = (event) => {
     event.preventDefault();
-     let returnedData = jobsData
-     returnedData = jobsData.filter((each) => {
-     const searchFilter = (each.position.toLowerCase().includes(filterByTitle.toLowerCase()) || each.company.toLowerCase().includes(filterByTitle.toLowerCase())) && each.location.toLowerCase().includes(filterByLocation.toLowerCase())
-     return fullTimeChecked ? searchFilter && each.contract === "Full Time" : searchFilter
+    filterByTitle = ''
+    filterByLocation = ''
+    let returnedData = jobsData
+    returnedData = jobsData.filter((each) => {
+    const searchFilter = (each.position.toLowerCase().includes(filterByTitle.toLowerCase()) || each.company.toLowerCase().includes(filterByTitle.toLowerCase())) && each.location.toLowerCase().includes(filterByLocation.toLowerCase())
+    return fullTimeChecked ? searchFilter && each.contract === "Full Time" : searchFilter
   })
   setFilteredData(returnedData)
 }
